@@ -41,10 +41,13 @@ export class CollectionListComponent implements OnInit {
     // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
 
     this.route.params.subscribe((param: Params) => {
-      this.search = param['search'];
       this.showType = param['type'];
       this.getList(this.page, this.search ?? '');
-      //    console.log(this.search);
+    });
+
+    this.route.queryParams.subscribe((param) => {
+      this.search = param['search'];
+      this.getList(this.page, this.search ?? '');
     });
     //  this.showType = this.route.snapshot.params['type'];
 
@@ -77,6 +80,7 @@ export class CollectionListComponent implements OnInit {
         .pipe(map(MapTvshowDtoToMovieDto));
       this.title = 'Tv shows';
     } else {
+      console.log(searchItem);
       this.collectionResponse$ = this.collectionService
         .searchCollectionByType(searchItem ?? '', page)
         .pipe(map(MapToMovieDto));
