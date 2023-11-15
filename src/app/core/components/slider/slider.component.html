@@ -1,0 +1,64 @@
+<div class="slider" *ngIf="movies">
+  <div class="slide" *ngFor="let movie of movies; let i = index">
+    <ng-container *ngIf="i === slideIndex">
+      <div @slideFade>
+        <div class="slide-bg">
+          <img
+            class="w-100"
+            [src]="imagesBaseURL + 'w780' + movie.poster_path"
+            [alt]="movie.title"
+          />
+        </div>
+        <div class="container">
+          <div class="slide-bane">
+            <h2 class="title">{{ movie.title }}</h2>
+            <div class="meta">
+              <div class="presentation">
+                <span role="presentation" class="release-date">
+                  {{ movie.release_date | date: 'YYYY' }}
+                </span>
+                <span role="presentation" class="info-spacer"> | </span>
+                <span role="presentation" class="language">
+                  {{ movie.original_language | uppercase }}
+                </span>
+                <span role="presentation" class="info-spacer"> | </span>
+                <span role="presentation" class="genre" *ngIf="movie.genre_ids">
+                  {{ this.getGenres(movie.genre_ids) }}
+                </span>
+                <span role="presentation" class="genre" *ngIf="movie.genres">
+                  {{ movie.genres | join: ',' }}
+                </span>
+                <!--    <span role="presentation" class="duration"> 1h 41m </span>
+                <span role="presentation" class="info-spacer"> | </span>
+                <span role="presentation" class="genre"> Comedies </span> -->
+              </div>
+            </div>
+            <div class="description">
+              {{ movie.overview }}
+            </div>
+            <div class="statistics">
+              <i class="pi pi-star-fill"></i>
+              <span class="statistics-desc">
+                <span>{{ movie.vote_average }}</span>
+                <span>/10</span>
+              </span>
+              <i class="pi pi-users"></i>
+              <span class="statistics-desc">
+                <span>{{ movie.vote_count }}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- 
+<pre>{{ movies$ | async | json }}</pre>
+
+<div *ngIf="movies$ | async as movies">
+  <div class="movie" *ngFor="let movie of movies.results">
+    {{ movie.original_title }}
+  </div>
+</div> 
+-->

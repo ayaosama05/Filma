@@ -1,0 +1,22 @@
+.genreLink {
+  border-radius: 12px;
+  text-decoration: none;
+  margin: 5px;
+  text-decoration: none;
+  color: var(--btn-bg-color);
+  border: 1px solid var(--btn-bg-color);
+  padding: 7px;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: var(--bg-color);
+    background-color: var(--btn-bg-color);
+    padding: 7px;
+  }
+}
+.clicked {
+  color: var(--bg-color);
+  background-color: var(--btn-bg-color);
+  padding: 7px;
+}

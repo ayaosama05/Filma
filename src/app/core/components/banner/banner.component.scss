@@ -1,0 +1,67 @@
+:host {
+  &:nth-child(odd) {
+    .banner {
+      background-color: #141316;
+    }
+  }
+  .banner {
+    background-color: var(--bg-color);
+    .section-title {
+      margin: 3rem 0 1.5rem;
+      .sub-title {
+        display: block;
+        line-height: 1;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+        color: var(--text-secondary-color);
+      }
+      .title {
+        color: var(--text-main-color);
+      }
+    }
+    .section-movies {
+      //  padding-bottom: 3rem;
+    }
+  }
+
+  ::ng-deep .p-carousel .p-carousel-content {
+    .p-carousel-prev,
+    .p-carousel-next {
+      box-shadow: none !important;
+      border-width: 1px !important;
+      padding: 8px 16px;
+      color: var(--text-secondary-color);
+      border: 1px solid var(--text-secondary-color);
+      background-color: transparent;
+      width: 30px;
+      height: 45px;
+      &.p-disabled {
+        background-color: #3b3b3b;
+      }
+      &:hover {
+        background-color: var(--text-secondary-color);
+        color: black;
+      }
+      /* if you wish to remove the border or change its color */
+      /* border: transparent !important; */
+      /*  width: 2.513rem;
+          height: 5.68rem;
+              border-radius: 50%;
+          border-radius: 25%;
+          border-right-color: #99bbff;
+          border-right-style: solid;
+          border-right-width: thin;
+          border-top-color: #99bbff;
+          border-top-style: solid;
+          border-top-width: thin;
+          border-bottom-color: #99bbff;
+          border-bottom-style: solid;
+          border-bottom-width: thin;
+          margin: 0 0 0 -5px; */
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.header__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .header__search-input {
+    width: calc(100% - 35px);
+    height: 40px;
+    background-color: #28262d;
+    border: 2px solid transparent;
+    font-size: 16px;
+    color: #fff;
+    padding: 0 20px 0 20px;
+    outline: none;
+  }
+  :focus {
+    border: 1px solid #525252;
+  }
+  .header__search-button {
+    height: 40px;
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--btn-bg-color);
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    &:hover {
+      background-color: var(--btn-bg-color);
+    }
+  }
+}

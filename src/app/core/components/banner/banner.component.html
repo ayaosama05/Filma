@@ -1,0 +1,26 @@
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title text-left">
+          <span class="sub-title">ONLINE STREAMING</span>
+          <h2 class="title">{{ title }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row section-movies">
+      <p-carousel
+        [value]="movies"
+        [autoplayInterval]="3000"
+        [numVisible]="6"
+        [numScroll]="3"
+        [circular]="false"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-movie pTemplate="item" class="carousel-item">
+          <app-show-card [movieItem]="movie" [type]="type"></app-show-card>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="section-block">
+  <div class="container">
+    <div
+      class="row justify-content-center pt-3"
+      *ngIf="this.genres$ | async as genres"
+    >
+      <!-- (click)="getMoviesByGenreID(genre.id)" -->
+      <a
+        class="genreLink"
+        [ngClass]="genreID === genre.id ? 'clicked' : ''"
+        *ngFor="let genre of genres"
+        aria-hidden="true"
+        [routerLink]="['/genres/' + genre.id]"
+      >
+        {{ genre.name }}
+      </a>
+    </div>
+    <ng-container *ngIf="movies$ | async as movies">
+      <div class="row">
+        <div class="col-12 col-md-3" *ngFor="let item of movies.results">
+          <app-show-card [movieItem]="item"></app-show-card>
+        </div>
+      </div>
+      <div class="row">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="paginationFirstValue"
+          [rows]="rows"
+          [totalRecords]="movies.total_results"
+        ></p-paginator>
+      </div>
+    </ng-container>
+  </div>
+</div>

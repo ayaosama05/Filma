@@ -1,0 +1,42 @@
+<div class="collection-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title text-left">
+          <span class="sub-title">ONLINE STREAMING</span>
+          <div *ngIf="search; else titleContainer">
+            <h2 class="title">Result For : {{ search }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="collectionResponse$ | async as collection">
+      <div class="row">
+        <div class="col-12 col-md-3" *ngFor="let item of collection.results">
+          <app-show-card
+            [movieItem]="item"
+            [type]="
+              showType === 'collection'
+                ? item.media_type === 'movie'
+                  ? 'movie'
+                  : 'tvshow'
+                : showType
+            "
+          ></app-show-card>
+        </div>
+      </div>
+      <div class="row">
+        <p-paginator
+          (onPageChange)="onPageChange($event)"
+          [first]="paginationFirstValue"
+          [rows]="rows"
+          [totalRecords]="collection.total_results"
+        ></p-paginator>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #titleContainer>
+  <h2 class="title">{{ title }}</h2>
+</ng-template>

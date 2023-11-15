@@ -1,0 +1,59 @@
+<div class="movie-item mb-50" *ngIf="movieItem">
+  <div class="movie-poster">
+    <a [routerLink]="['/details', type, movieItem.id]">
+      <img
+        *ngIf="movieItem.poster_path; else other_poster"
+        class="w-100"
+        [src]="imagesBaseURL + 'w500' + movieItem.poster_path"
+        [alt]="movieItem.title"
+      />
+      <ng-template #other_poster>
+        <img
+          class="w-100"
+          src="/assets/images/poster-not-found.png"
+          [alt]="movieItem.title"
+        />
+      </ng-template>
+      <div class="image-overlay"></div>
+    </a>
+  </div>
+  <div class="movie-body">
+    <div class="movie-info">
+      <div class="movie-info-head">
+        <div class="movie-meta">
+          <span class="movie-meta--rating">
+            <i class="pi pi-star"></i>
+            {{ movieItem.vote_average | number: '1.1-1' }}/10
+          </span>
+          <span class="movie-meta--release-year">
+            {{ movieItem.release_date | date: 'YYYY' }}</span
+          >
+        </div>
+        <div class="movie-title">
+          <a
+            [routerLink]="['details', movieItem.id]"
+            class="movie-title-link"
+            >{{ movieItem.original_title }}</a
+          >
+          <div>
+            <button
+              title="Remove From favorites"
+              (click)="removeFromFavoriteList()"
+              *ngIf="isFavorite"
+            >
+              <i class="pi pi-heart-fill favorite-btn"></i>
+            </button>
+
+            <button
+              title="Add to favorites"
+              (click)="AddToFavoriteList()"
+              *ngIf="!isFavorite"
+            >
+              <i class="pi pi-heart favorite-btn"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

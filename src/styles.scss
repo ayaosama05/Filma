@@ -1,0 +1,62 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap');
+
+/* PrimeFlex 
+@import '/node_modules/primeflex/primeflex.css';*/
+
+/* Modern-Normalize */
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+/* PrimeIcons */
+@import 'node_modules/primeicons/primeicons.css';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  --text-main-color: #222;
+  --text-secondary-color: #ffc312;
+  --bg-color: #fff;
+  --btn-txt-color: #fff;
+  --btn-bg-color: #ffc312;
+}
+body.dark-theme {
+  --text-main-color: #eee;
+  --text-main-color: white;
+  --bg-color: #1a191f;
+  --btn-txt-color: rgb(46, 43, 43);
+}
+.grid {
+  margin: 0;
+  padding: 0;
+}
+input[type='text'],
+input[type='email'] {
+  color: var(--btn-txt-color);
+  &::placeholder {
+    color: var(--btn-txt-color);
+  }
+  &::-ms-input-placeholder {
+    color: var(--btn-txt-color);
+  }
+  opacity: 1;
+}
+
+.container {
+  // background-color: var(--bg-color);
+  padding: 0 45px;
+  width: 100%;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.section-block {
+  min-height: 59vh;
+  background-color: var(--bg-color);
+}
+
+@media (min-width: 576px) {
+}

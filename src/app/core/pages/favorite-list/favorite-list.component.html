@@ -1,0 +1,39 @@
+<div class="collection-section section-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title text-left">
+          <span class="sub-title">Your Favorite List</span>
+        </div>
+      </div>
+    </div>
+    <ng-container
+      *ngIf="favoriteList && favoriteList.length > 0; else noFavoriteFound"
+    >
+      <div class="row">
+        <div class="col-12 col-md-3" *ngFor="let item of favoriteList">
+          <app-show-card
+            [movieItem]="item.item"
+            [type]="item.type"
+            [isFavorite]="true"
+          ></app-show-card>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #noFavoriteFound>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h4 class="title">Your List is empty!!</h4>
+      <p class="content">
+        back to Home page to add your favorites and watch it later
+      </p>
+      <a [routerLink]="['/']">
+        <i class="pi pi-home"></i>
+        Back to Home
+      </a>
+    </div>
+  </div>
+</ng-template>

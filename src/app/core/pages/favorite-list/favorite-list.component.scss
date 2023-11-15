@@ -1,0 +1,41 @@
+.collection-section {
+  .row {
+    justify-content: flex-start;
+  }
+  .section-title {
+    margin: 3rem 0 1.5rem;
+    .sub-title {
+      display: block;
+      line-height: 1;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      color: var(--text-secondary-color);
+    }
+  }
+  .title,
+  .content {
+    color: var(--text-main-color);
+    display: block;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+  }
+  a {
+    text-decoration: none;
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 9px;
+    border: 1px solid #e3d804;
+    color: #e3d804;
+    transition: all 1s ease-in-out;
+    &:hover {
+      background-color: #ffc312;
+      color:  black;
+    }
+  }
+}

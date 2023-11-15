@@ -1,0 +1,11 @@
+<form class="header__search d-flex" (submit)="searchMovie()">
+  <input
+    class="header__search-input"
+    type="text"
+    placeholder="Search..."
+    [(ngModel)]="searchValue"
+    name="search"
+    required
+  />
+  <button class="header__search-button" type="submit">Search</button>
+</form>
