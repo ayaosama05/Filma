@@ -38,9 +38,8 @@ npm install -g @angular/cli
 ## Quick start
 
 ```bash
-# select a repo from github or gitlab
 
-# download the example or clone the repo from github
+# download the repo  or clone the repo from github
 git clone https://github.com/ayaosama05/Filma.git
 
 # change directory
