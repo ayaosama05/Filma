@@ -1,27 +1,67 @@
-# Filma
+<h1 align="center">Filma</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/25181517/183890595-779a7e64-3f43-4634-bad2-eceef4e80268.png" alt="angular-logo" width="120px" height="120px"/>
+  <br>
+  <em>Filma is Movies & TV-Series Application using Angular 16.</em>
+  <br>
+</p>
 
-## Development server
+# [Live Demo](#live-demo)
+Here is a working live demo : https://ayaosama05.github.io/Filma
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+https://github.com/ayaosama05/Filma/assets/39543940/c96e1de3-8981-4ab3-b9b4-7a671c1bb69e
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### What's included
+> Dependencies
+- [x] Angular 
+- [x] Angular CLI
+> Style
+- [x] SCSS 
+- [x] PrimeFlex , PrimeNG , primeIcons
+- [x] Bootstrap 
+> APIs
+- [x] TMDB 
 
-## Build
+## Development Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Install [Node.js] which includes [Node Package Manager][npm]
+- Install the Angular CLI globally:
+```
+npm install -g @angular/cli
+```
+- generate API key from [TMDB] and register in application - services  
+  
+## Quick start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+# select a repo from github or gitlab
 
-## Running end-to-end tests
+# download the example or clone the repo from github
+git clone https://github.com/ayaosama05/Filma.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# change directory
+cd Filma
+
+# install the repo dependencies with npm
+npm install
+
+# start the server
+npm start 
+
+# compilation
+npm build
+```
+in your browser go to [http://localhost:4200](http://localhost:4200) 
+
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+[node.js]: https://nodejs.org/
+[npm]: https://www.npmjs.com/get-npm
+[TMDB]: https://developer.themoviedb.org/reference/intro/getting-started
